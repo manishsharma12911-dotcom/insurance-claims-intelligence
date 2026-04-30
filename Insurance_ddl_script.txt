@@ -1,0 +1,64 @@
+-- agentinfo Table
+Create Table agentinfo (
+agent_id varchar(10) PRIMARY KEY,
+region varchar (20),
+join_date Date,
+total_policies_sold int,
+lapsed_policies int,
+avg_premium_sold decimal(10,2) ,
+fraud_association int
+);
+
+-- claimhistory Table
+Create Table claimhistory(
+claim_id varchar(15) PRIMARY KEY ,
+policy_id varchar(15) ,
+claim_date Date,
+claim_amount decimal(10,2) ,
+claim_status char(15),
+claim_type char(15),
+fraud_flag char(10),
+days_to_process int,
+FOREIGN KEY (policy_id) references policydetails(policy_id)
+);
+
+-- customerfeedback Table
+Create Table customerfeedback (
+feedback_id varchar(15) PRIMARY KEY,
+customer_id varchar(15),
+date_submitted Date,
+feedback_text varchar(500),
+satisfaction_score int,
+contacted_agent varchar(10),
+referred_claim varchar(10)
+);
+
+-- customermaster Table
+Create Table customermaster(
+customer_id varchar (15) PRIMARY KEY ,
+full_name varchar (50),
+age int,
+gender char(10),
+marital_status char(20),
+occupation char(30),
+region char(20),
+smoking_status char(15),
+pre_existing_illness char(15),
+risk_score decimal(10,2),
+date_joined Date
+);
+
+-- policydetails Table
+Create Table policydetails(
+policy_id varchar(20) PRIMARY KEY ,
+customer_id varchar (15),
+product_type char(20),
+coverage_amount decimal(10,2) ,
+annual_premium decimal(10,2) ,
+policy_start_date date,
+policy_end_date date,
+agent_id varchar(10) ,
+status varchar (20),
+FOREIGN KEY (customer_id) references customermaster(customer_id),
+FOREIGN KEY (agent_id) references agentinfo(agent_id)
+);
