@@ -1,10 +1,6 @@
 # insurance-claims-intelligence
 <div align="center">
 
-<!-- HEADER BANNER -->
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:16213e,100:0f3460&height=200&section=header&text=Risk%20Analytics%20%26%20Claims%20Intelligence&fontSize=36&fontColor=e94560&fontAlignY=38&desc=AegisLife%20Insurance%20Pvt.%20Ltd.%20%7C%20Capstone%20Project&descAlignY=60&descSize=16&descColor=a8b2d8&animation=fadeIn"/>
-
 <br/>
 
 <!-- BADGES ROW 1 -->
